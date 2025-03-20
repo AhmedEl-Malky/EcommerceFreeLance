@@ -15,7 +15,7 @@ val PopOverLight = Color(0xFF000000)  // inverseSurface
 val PopOverForegroundLight = Color(0xFFFFFFFF) // inverseOnSurface
 val MutedLight = Color(0xFF000000).copy(alpha = 0.4f) // Tertiary
 val MutedForeGroundLight = Color(0xFF000000).copy(alpha = 0.6f) // OnTertiary
-val AccentLight = Color(0xFFF4F4F5) // surfaceContainerHighest
+val AccentLight = Color(0xFF000000).copy(alpha = 0.4f) // surfaceContainerHighest
 val AccentForeGroundLight = Color(0xFF17171B) // surfaceContainerLowest
 val DestructiveLight = Color(0xFFFF3333).copy(alpha = 0.1f) // Error
 val DestructiveForeGroundLight = Color(0xFFFF3333) // OnError
