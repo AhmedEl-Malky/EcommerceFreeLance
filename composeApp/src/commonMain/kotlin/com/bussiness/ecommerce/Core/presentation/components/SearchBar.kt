@@ -13,10 +13,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bussiness.ecommerce.Core.presentation.theme.FontFamily
-import com.bussiness.ecommerce.Core.presentation.theme.FontType
 import e_commercefreelance.composeapp.generated.resources.Res
+import e_commercefreelance.composeapp.generated.resources.Search_for_products
 import e_commercefreelance.composeapp.generated.resources.search_icon
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun SearchBar(){
@@ -34,11 +35,10 @@ fun SearchBar(){
             placeholder = {
                 Text(
                     modifier = Modifier.padding(start = 0.5.dp),
-                    text = "Search for products",
+                    text = stringResource(Res.string.Search_for_products),
                     color = MaterialTheme.colorScheme.surfaceContainerHighest,
                     fontSize = 16.sp,
                     fontFamily = FontFamily(
-                        fontType = FontType.SATOSHI,
                         weight = FontWeight.Normal
                     )
                 )

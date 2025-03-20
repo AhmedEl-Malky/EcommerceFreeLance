@@ -21,7 +21,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bussiness.ecommerce.Core.presentation.theme.FontFamily
-import com.bussiness.ecommerce.Core.presentation.theme.FontType
 import e_commercefreelance.composeapp.generated.resources.Res
 import e_commercefreelance.composeapp.generated.resources.cart_icon
 import e_commercefreelance.composeapp.generated.resources.menu_icon
@@ -55,7 +54,6 @@ fun TopAppBar(){
                 text = "SHOP.CO",
                 fontSize = 26.sp,
                 fontFamily = FontFamily(
-                    fontType = FontType.INTEGRAL_CF,
                     weight = FontWeight.Bold
                 ),
                 color = MaterialTheme.colorScheme.primary

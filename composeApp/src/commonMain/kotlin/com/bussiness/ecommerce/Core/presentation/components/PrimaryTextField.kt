@@ -21,7 +21,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bussiness.ecommerce.Core.presentation.theme.FontFamily
-import com.bussiness.ecommerce.Core.presentation.theme.FontType
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -59,7 +58,6 @@ fun PrimaryTextField(
             fontSize = 14.sp,
             color = MaterialTheme.colorScheme.onSurface,
             fontFamily = FontFamily(
-                fontType = FontType.SATOSHI,
                 weight = FontWeight.Normal
             )
         ),
