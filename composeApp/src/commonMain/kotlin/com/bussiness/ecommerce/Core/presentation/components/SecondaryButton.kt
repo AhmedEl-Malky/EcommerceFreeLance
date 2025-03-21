@@ -22,7 +22,8 @@ fun SecondaryButton(
     enabled: Boolean = true,
     shape: Shape = RoundedCornerShape(62.dp),
     colors: ButtonColors = ButtonDefaults.buttonColors(
-        containerColor = MaterialTheme.colorScheme.background
+        containerColor = MaterialTheme.colorScheme.background,
+        contentColor = MaterialTheme.colorScheme.tertiary
     ),
     elevation: ButtonElevation? = ButtonDefaults.buttonElevation(),
     border: BorderStroke = BorderStroke(width = 1.dp, color = MaterialTheme.colorScheme.outline),
