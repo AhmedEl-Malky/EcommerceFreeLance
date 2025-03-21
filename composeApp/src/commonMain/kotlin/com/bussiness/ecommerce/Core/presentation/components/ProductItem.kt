@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.sp
 import com.bussiness.ecommerce.Core.presentation.theme.FontFamily
 
 @Composable
-fun ProductItem(){
+fun ProductItem() {
     Column(
         modifier = Modifier.width(200.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp)
@@ -89,7 +89,8 @@ fun ProductItem(){
                     fontFamily = FontFamily(
                         weight = FontWeight.Medium
                     ),
-                    color = MaterialTheme.colorScheme.onError
+                    color = MaterialTheme.colorScheme.onError,
+                    textAlign = TextAlign.Center
                 )
             }
 

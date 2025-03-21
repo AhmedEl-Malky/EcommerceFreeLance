@@ -35,7 +35,7 @@ fun TopAppBar() {
         modifier = Modifier
             .fillMaxWidth()
             .background(MaterialTheme.colorScheme.background)
-            .padding(horizontal = 16.dp, vertical = 20.dp)
+            .padding(12.dp)
             .windowInsetsPadding(WindowInsets.statusBars),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
@@ -49,42 +49,42 @@ fun TopAppBar() {
             ),
             color = MaterialTheme.colorScheme.primary
         )
-    }
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        IconToggleButton(
-            checked = false,
-            onCheckedChange = { },
-            colors = IconButtonDefaults.iconToggleButtonColors(
-                containerColor = MaterialTheme.colorScheme.background,
-                contentColor = MaterialTheme.colorScheme.primary,
-                checkedContainerColor = MaterialTheme.colorScheme.primary,
-                checkedContentColor = MaterialTheme.colorScheme.onPrimary
-            )
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
         ) {
-            Icon(
-                modifier = Modifier.size(24.dp),
-                painter = painterResource(Res.drawable.search_icon),
-                contentDescription = "Search"
-            )
+            IconToggleButton(
+                checked = false,
+                onCheckedChange = { },
+                colors = IconButtonDefaults.iconToggleButtonColors(
+                    containerColor = MaterialTheme.colorScheme.background,
+                    contentColor = MaterialTheme.colorScheme.primary,
+                    checkedContainerColor = MaterialTheme.colorScheme.primary,
+                    checkedContentColor = MaterialTheme.colorScheme.onPrimary
+                )
+            ) {
+                Icon(
+                    modifier = Modifier.size(24.dp),
+                    painter = painterResource(Res.drawable.search_icon),
+                    contentDescription = "Search"
+                )
 
-        }
-        IconButton(
-            onClick = {}
-        ) {
-            Icon(
-                painter = painterResource(Res.drawable.cart_icon),
-                contentDescription = "Go to Cart",
-            )
-        }
-        IconButton(
-            onClick = {}
-        ) {
-            Icon(
-                painter = painterResource(Res.drawable.profile_icon),
-                contentDescription = "Go to Cart",
-            )
+            }
+            IconButton(
+                onClick = {}
+            ) {
+                Icon(
+                    painter = painterResource(Res.drawable.cart_icon),
+                    contentDescription = "Go to Cart",
+                )
+            }
+            IconButton(
+                onClick = {}
+            ) {
+                Icon(
+                    painter = painterResource(Res.drawable.profile_icon),
+                    contentDescription = "Go to Cart",
+                )
+            }
         }
     }
 }
