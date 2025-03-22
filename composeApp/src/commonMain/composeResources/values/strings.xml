@@ -7,5 +7,8 @@
     <string name="Subtitle">تصفح مجموعتنا الواسعة من الأدوات والمعدات عالية الجودة، المصممة لتلبية احتياجاتك وتجاوز توقعاتك.</string>
     <string name="New_Arrivals">وافد جديد</string>
     <string name="Top_selling">الأكثر مبيعاً</string>
-    <string name="Browse_Categories">تصـفح فــــئات \n المنتجـــات</string>
+    <string name="Browse_Categories">تصـفح فــــئات\nالمنتجـــات</string>
+    <string name="Stay_Up_To_Date">كٌن على اطلاع\nبأحدث عروضنـــــــــا</string>
+    <string name="Contact_us">تواصَل معنــــــا :</string>
+    <string name="Copy_rights">جميـــع الحقوق محفوظـة لدى Shop.co © 2000-2023</string>
 </resources>

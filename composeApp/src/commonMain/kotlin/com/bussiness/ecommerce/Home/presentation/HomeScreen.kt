@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
+import com.bussiness.ecommerce.Core.presentation.components.FooterSection
 import com.bussiness.ecommerce.Core.presentation.components.TopAppBar
 import com.bussiness.ecommerce.Home.presentation.components.CategoriesSection
 import com.bussiness.ecommerce.Home.presentation.components.CategoryCard
@@ -80,6 +81,9 @@ private fun HomeScreenContent(
                         )
                         .background(MaterialTheme.colorScheme.secondary)
                 )
+            }
+            item {
+                FooterSection()
             }
         }
     }

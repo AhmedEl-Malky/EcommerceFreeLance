@@ -6,12 +6,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.ui.platform.LocalLayoutDirection
-import androidx.compose.ui.unit.LayoutDirection
 import com.bussiness.ecommerce.Core.presentation.theme.AppTheme
-import com.bussiness.ecommerce.Home.presentation.HomeScreen
-import com.bussiness.ecommerce.Home.presentation.HomeState
+import com.bussiness.ecommerce.app.App
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,15 +23,8 @@ class MainActivity : ComponentActivity() {
         )
         super.onCreate(savedInstanceState)
         setContent {
-            CompositionLocalProvider(
-                LocalLayoutDirection provides LayoutDirection.Rtl
-            ) {
-                AppTheme {
-                    HomeScreen(
-                        state = HomeState(),
-                        onAction = {}
-                    )
-                }
+            AppTheme {
+                App()
             }
         }
     }
