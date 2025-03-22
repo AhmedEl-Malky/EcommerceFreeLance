@@ -55,11 +55,11 @@ fun PrimaryTextField(
         readOnly = readOnly,
         textStyle = TextStyle(
             textAlign = TextAlign.Start,
-            fontSize = 14.sp,
-            color = MaterialTheme.colorScheme.onSurface,
+            fontSize = 16.sp,
+            color = MaterialTheme.colorScheme.primary,
             fontFamily = FontFamily(
                 weight = FontWeight.Normal
-            )
+            ),
         ),
         maxLines = maxLines,
         minLines = minLines,
@@ -95,11 +95,11 @@ fun PrimaryTextField(
                         unfocusedContainerColor = MaterialTheme.colorScheme.secondary,
                         focusedBorderColor = MaterialTheme.colorScheme.secondary,
                         unfocusedBorderColor = MaterialTheme.colorScheme.secondary,
-                        focusedTextColor = MaterialTheme.colorScheme.surfaceVariant,
-                        unfocusedTextColor = MaterialTheme.colorScheme.surfaceVariant,
+                        focusedTextColor = MaterialTheme.colorScheme.primary,
+                        unfocusedTextColor = MaterialTheme.colorScheme.primary,
                         errorContainerColor = MaterialTheme.colorScheme.background,
-                        errorBorderColor = MaterialTheme.colorScheme.error,
-                        errorSupportingTextColor = MaterialTheme.colorScheme.error,
+                        errorBorderColor = MaterialTheme.colorScheme.onError,
+                        errorSupportingTextColor = MaterialTheme.colorScheme.onError,
                         unfocusedSupportingTextColor = MaterialTheme.colorScheme.error,
                         focusedSupportingTextColor = MaterialTheme.colorScheme.error
                     )

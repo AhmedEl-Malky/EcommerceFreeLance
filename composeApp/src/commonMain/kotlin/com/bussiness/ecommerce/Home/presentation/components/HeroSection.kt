@@ -9,9 +9,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
@@ -27,11 +29,16 @@ import e_commercefreelance.composeapp.generated.resources.Shop_now
 import e_commercefreelance.composeapp.generated.resources.Slogan
 import e_commercefreelance.composeapp.generated.resources.Subtitle
 import e_commercefreelance.composeapp.generated.resources.hero
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun HeroSection(){
+fun HeroSection(
+    state: LazyListState
+) {
+    val coroutineScope = rememberCoroutineScope()
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -73,7 +80,12 @@ fun HeroSection(){
                 )
             }
             PrimaryButton(
-                onClick = {},
+                onClick = {
+                    coroutineScope.launch {
+                        delay(300)
+                        state.animateScrollToItem(index = 1)
+                    }
+                },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(52.dp)

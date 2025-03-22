@@ -30,7 +30,10 @@ import e_commercefreelance.composeapp.generated.resources.search_icon
 import org.jetbrains.compose.resources.painterResource
 
 @Composable
-fun TopAppBar() {
+fun TopAppBar(
+    isSearchBarVisible:Boolean,
+    toggleSearchBar: (Boolean) -> Unit
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -53,8 +56,10 @@ fun TopAppBar() {
             verticalAlignment = Alignment.CenterVertically,
         ) {
             IconToggleButton(
-                checked = false,
-                onCheckedChange = { },
+                checked = isSearchBarVisible,
+                onCheckedChange = {
+                    toggleSearchBar(it)
+                },
                 colors = IconButtonDefaults.iconToggleButtonColors(
                     containerColor = MaterialTheme.colorScheme.background,
                     contentColor = MaterialTheme.colorScheme.primary,

@@ -30,8 +30,10 @@ import androidx.compose.ui.unit.sp
 import com.bussiness.ecommerce.Core.presentation.theme.AppTheme
 import com.bussiness.ecommerce.Core.presentation.theme.Font
 import com.bussiness.ecommerce.Core.presentation.theme.FontFamily
+import com.bussiness.ecommerce.Home.presentation.components.ProductsDiscoverSection
 import e_commercefreelance.composeapp.generated.resources.Contact_us
 import e_commercefreelance.composeapp.generated.resources.Copy_rights
+import e_commercefreelance.composeapp.generated.resources.New_Arrivals
 import e_commercefreelance.composeapp.generated.resources.Res
 import e_commercefreelance.composeapp.generated.resources.Stay_Up_To_Date
 import e_commercefreelance.composeapp.generated.resources.facebook_icon
@@ -49,7 +51,7 @@ fun Preview() {
         LocalLayoutDirection provides LayoutDirection.Rtl
     ) {
         AppTheme {
-
+            ProductsDiscoverSection(title = Res.string.New_Arrivals)
         }
     }
 }

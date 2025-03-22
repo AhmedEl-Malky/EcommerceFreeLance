@@ -2,6 +2,7 @@ package com.bussiness.ecommerce.app.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -21,7 +22,7 @@ fun NavigationGraph(){
             startDestination = Route.Home
         ){
             composable<Route.Home> {
-                val viewModel = HomeViewModel()
+                val viewModel = remember { HomeViewModel() }
                 val state by viewModel.state.collectAsStateWithLifecycle()
                 HomeScreen(
                     state = state,

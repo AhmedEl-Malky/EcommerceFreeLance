@@ -1,5 +1,11 @@
 package com.bussiness.ecommerce.Home.presentation
 
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,6 +14,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -16,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import com.bussiness.ecommerce.Core.presentation.components.FooterSection
+import com.bussiness.ecommerce.Core.presentation.components.SearchBar
 import com.bussiness.ecommerce.Core.presentation.components.TopAppBar
 import com.bussiness.ecommerce.Home.presentation.components.CategoriesSection
 import com.bussiness.ecommerce.Home.presentation.components.CategoryCard
@@ -41,19 +49,41 @@ private fun HomeScreenContent(
     state: HomeState,
     onAction: (HomeAction) -> Unit,
 ) {
+    val lazyColumnState = rememberLazyListState()
     Scaffold(
         topBar = {
-            TopAppBar()
+            TopAppBar(
+                isSearchBarVisible = state.isSearchBarVisible,
+                toggleSearchBar = {
+                    onAction(HomeAction.OnSearchBarVisibilityToggle(it))
+                }
+            )
         }
     ) { paddingValues ->
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
                 .background(MaterialTheme.colorScheme.background)
-                .padding(paddingValues)
+                .padding(paddingValues),
+            state = lazyColumnState
         ) {
             item {
-                HeroSection()
+                AnimatedContent(
+                    targetState = state.isSearchBarVisible,
+                    transitionSpec = {
+                        (fadeIn(animationSpec = tween(220, delayMillis = 90)) +
+                                scaleIn(initialScale = 0.92f, animationSpec = tween(220, delayMillis = 90)))
+                            .togetherWith(fadeOut(animationSpec = tween(90)))
+                    },
+                ){
+                    if(state.isSearchBarVisible)
+                        SearchBar(
+                            query = state.searchQuery,
+                            onQueryChange = { onAction(HomeAction.OnSearchQueryChange(it))}
+                        )
+                    else
+                        HeroSection(state = lazyColumnState)
+                }
             }
             item {
                 ProductsDiscoverSection(title = Res.string.New_Arrivals)

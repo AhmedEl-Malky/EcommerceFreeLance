@@ -9,8 +9,8 @@ val SecondaryForeGroundLight = Color(0xFF000000)  // OnSecondary
 val BackgroundLight = Color(0xFFFFFFFF)  // Background
 val ForegroundLight = Color(0xFF000000)  // OnBackground
 val BorderLight = Color(0xFF000000).copy(alpha = 0.1f) // Outline
-val CardLight = Color(0xFFF0F0F0)       // Surface
-val CardForegroundLight = Color(0xFF000000) // OnSurface
+val CardLight = Color(0xFFFFFFFF)       // Surface
+val CardForegroundLight = Color(0xFF000000).copy(alpha = 0.1f) // OnSurface
 val PopOverLight = Color(0xFF000000)  // inverseSurface
 val PopOverForegroundLight = Color(0xFFFFFFFF) // inverseOnSurface
 val MutedLight = Color(0xFF000000).copy(alpha = 0.4f) // Tertiary
