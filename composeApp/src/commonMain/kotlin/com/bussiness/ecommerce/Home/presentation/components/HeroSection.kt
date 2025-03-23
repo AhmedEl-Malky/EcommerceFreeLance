@@ -82,7 +82,7 @@ fun HeroSection(
             PrimaryButton(
                 onClick = {
                     coroutineScope.launch {
-                        delay(300)
+                        delay(200)
                         state.animateScrollToItem(index = 1)
                     }
                 },

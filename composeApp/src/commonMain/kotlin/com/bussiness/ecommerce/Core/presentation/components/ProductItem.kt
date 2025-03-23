@@ -1,8 +1,8 @@
 package com.bussiness.ecommerce.Core.presentation.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -24,11 +24,18 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bussiness.ecommerce.Core.presentation.theme.FontFamily
+import e_commercefreelance.composeapp.generated.resources.Res
+import e_commercefreelance.composeapp.generated.resources.hero
+import org.jetbrains.compose.resources.painterResource
 
 @Composable
-fun ProductItem() {
+fun ProductItem(
+    navigate:() -> Unit
+) {
     Card(
-        onClick = {},
+        onClick = {
+            navigate()
+        },
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.background,
             contentColor = MaterialTheme.colorScheme.background
@@ -39,14 +46,14 @@ fun ProductItem() {
             modifier = Modifier.width(200.dp),
             verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
-            Box(
+            Image(
                 modifier = Modifier
                     .size(200.dp)
                     .clip(RoundedCornerShape(14.dp))
-                    .background(MaterialTheme.colorScheme.secondary)
-            ) {
-
-            }
+                    .background(MaterialTheme.colorScheme.secondary),
+                painter = painterResource(Res.drawable.hero),
+                contentDescription = "Product Image"
+            )
             Column(
                 verticalArrangement = Arrangement.spacedBy(4.dp)
             ) {

@@ -23,6 +23,8 @@ import com.bussiness.ecommerce.Core.presentation.components.ProductItem
 import com.bussiness.ecommerce.Core.presentation.components.SecondaryButton
 import com.bussiness.ecommerce.Core.presentation.theme.Font
 import com.bussiness.ecommerce.Core.presentation.theme.FontFamily
+import com.bussiness.ecommerce.app.navigation.Navigator
+import com.bussiness.ecommerce.app.navigation.Route
 import e_commercefreelance.composeapp.generated.resources.Res
 import e_commercefreelance.composeapp.generated.resources.View_all
 import org.jetbrains.compose.resources.StringResource
@@ -30,7 +32,8 @@ import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun ProductsDiscoverSection(
-    title: StringResource
+    title: StringResource,
+    navigator: Navigator
 ) {
     Column(
         modifier = Modifier
@@ -57,7 +60,9 @@ fun ProductsDiscoverSection(
             contentPadding = PaddingValues(horizontal = 16.dp)
         ) {
             items(list) {
-                ProductItem()
+                ProductItem(
+                    navigate = { navigator.navigate(Route.Product)}
+                )
             }
         }
         Spacer(modifier = Modifier.height(24.dp))

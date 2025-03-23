@@ -10,10 +10,13 @@ import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
 import com.bussiness.ecommerce.Home.presentation.HomeScreen
 import com.bussiness.ecommerce.Home.presentation.HomeViewModel
+import com.bussiness.ecommerce.product.presentation.ProductScreen
+import com.bussiness.ecommerce.product.presentation.ProductViewModel
 
 @Composable
 fun NavigationGraph(){
     val navController = rememberNavController()
+    val navigator = remember { Navigator(navController) }
     NavHost(
         navController = navController,
         startDestination = Route.AppGraph
@@ -26,7 +29,18 @@ fun NavigationGraph(){
                 val state by viewModel.state.collectAsStateWithLifecycle()
                 HomeScreen(
                     state = state,
-                    onAction = viewModel::onAction
+                    onAction = viewModel::onAction,
+                    navigator = navigator
+                )
+            }
+
+            composable<Route.Product> {
+                val viewModel = remember { ProductViewModel() }
+                val state by viewModel.state.collectAsStateWithLifecycle()
+                ProductScreen(
+                    state = state,
+                    onAction = viewModel::onAction,
+                    navigator = navigator
                 )
             }
         }

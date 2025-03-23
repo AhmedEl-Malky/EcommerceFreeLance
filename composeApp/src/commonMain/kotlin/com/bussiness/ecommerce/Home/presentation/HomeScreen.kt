@@ -29,6 +29,7 @@ import com.bussiness.ecommerce.Home.presentation.components.CategoriesSection
 import com.bussiness.ecommerce.Home.presentation.components.CategoryCard
 import com.bussiness.ecommerce.Home.presentation.components.HeroSection
 import com.bussiness.ecommerce.Home.presentation.components.ProductsDiscoverSection
+import com.bussiness.ecommerce.app.navigation.Navigator
 import e_commercefreelance.composeapp.generated.resources.New_Arrivals
 import e_commercefreelance.composeapp.generated.resources.Res
 import e_commercefreelance.composeapp.generated.resources.Top_selling
@@ -37,10 +38,12 @@ import e_commercefreelance.composeapp.generated.resources.Top_selling
 fun HomeScreen(
     state: HomeState,
     onAction: (HomeAction) -> Unit,
+    navigator: Navigator
 ) {
     HomeScreenContent(
         state = state,
-        onAction = onAction
+        onAction = onAction,
+        navigator = navigator
     )
 }
 
@@ -48,6 +51,7 @@ fun HomeScreen(
 private fun HomeScreenContent(
     state: HomeState,
     onAction: (HomeAction) -> Unit,
+    navigator: Navigator
 ) {
     val lazyColumnState = rememberLazyListState()
     Scaffold(
@@ -86,10 +90,16 @@ private fun HomeScreenContent(
                 }
             }
             item {
-                ProductsDiscoverSection(title = Res.string.New_Arrivals)
+                ProductsDiscoverSection(
+                    title = Res.string.New_Arrivals,
+                    navigator = navigator
+                )
             }
             item {
-                ProductsDiscoverSection(title = Res.string.Top_selling)
+                ProductsDiscoverSection(
+                    title = Res.string.Top_selling,
+                    navigator = navigator
+                )
             }
             item {
                 CategoriesSection()
