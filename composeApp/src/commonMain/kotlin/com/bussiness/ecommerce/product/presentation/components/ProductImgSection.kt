@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -47,33 +48,10 @@ fun ProductImgSection(){
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ){
-            Image(
-                modifier = Modifier
-                    .size(110.dp)
-                    .clip(RoundedCornerShape(20.dp))
-                    .background(MaterialTheme.colorScheme.secondary)
-                    .border(
-                        width = 1.5.dp,
-                        color = MaterialTheme.colorScheme.primary,
-                        shape = RoundedCornerShape(20.dp)
-                    ),
-                painter = painterResource(Res.drawable.hero),
-                contentDescription = "Main Image"
-            )
-            Image(
-                modifier = Modifier
-                    .size(110.dp)
-                    .clip(RoundedCornerShape(20.dp))
-                    .background(MaterialTheme.colorScheme.secondary)
-                    .border(
-                        width = 1.dp,
-                        color = MaterialTheme.colorScheme.outline,
-                        shape = RoundedCornerShape(20.dp)
-                    ),
-                painter = painterResource(Res.drawable.hero),
-                contentDescription = "Main Image"
-            )
             Card(
+                modifier = Modifier
+                    .weight(1f)
+                    .aspectRatio(1f),
                 onClick = {},
                 shape = RoundedCornerShape(20.dp),
                 colors = CardDefaults.cardColors(
@@ -83,7 +61,57 @@ fun ProductImgSection(){
             ){
                 Image(
                     modifier = Modifier
-                        .size(110.dp)
+                        .fillMaxSize()
+                        .clip(RoundedCornerShape(20.dp))
+                        .background(MaterialTheme.colorScheme.secondary)
+                        .border(
+                            width = 1.6.dp,
+                            color = MaterialTheme.colorScheme.primary,
+                            shape = RoundedCornerShape(20.dp)
+                        ),
+                    painter = painterResource(Res.drawable.hero),
+                    contentDescription = "Main Image"
+                )
+            }
+            Card(
+                modifier = Modifier
+                    .weight(1f)
+                    .aspectRatio(1f),
+                onClick = {},
+                shape = RoundedCornerShape(20.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.background,
+                    contentColor = MaterialTheme.colorScheme.background
+                )
+            ){
+                Image(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .clip(RoundedCornerShape(20.dp))
+                        .background(MaterialTheme.colorScheme.secondary)
+                        .border(
+                            width = 0.8.dp,
+                            color = MaterialTheme.colorScheme.outline,
+                            shape = RoundedCornerShape(20.dp)
+                        ),
+                    painter = painterResource(Res.drawable.hero),
+                    contentDescription = "Main Image"
+                )
+            }
+            Card(
+                modifier = Modifier
+                    .weight(1f)
+                    .aspectRatio(1f),
+                onClick = {},
+                shape = RoundedCornerShape(20.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.background,
+                    contentColor = MaterialTheme.colorScheme.background
+                )
+            ){
+                Image(
+                    modifier = Modifier
+                        .fillMaxSize()
                         .clip(RoundedCornerShape(20.dp))
                         .background(MaterialTheme.colorScheme.secondary)
                         .border(
