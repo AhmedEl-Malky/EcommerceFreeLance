@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -49,7 +50,8 @@ fun ProductItem(
         ) {
             Image(
                 modifier = modifier
-                    .size(200.dp)
+                    .fillMaxWidth()
+                    .aspectRatio(1f)
                     .clip(RoundedCornerShape(14.dp))
                     .background(MaterialTheme.colorScheme.secondary),
                 painter = painterResource(Res.drawable.hero),
@@ -101,7 +103,7 @@ fun ProductItem(
                         modifier = Modifier
                             .clip(RoundedCornerShape(50.dp))
                             .background(MaterialTheme.colorScheme.error)
-                            .padding(vertical = 3.dp, horizontal = 8.dp),
+                            .padding(vertical = 2.dp, horizontal = 4.dp),
                         text = "20%-",
                         fontSize = 16.sp,
                         fontFamily = FontFamily(

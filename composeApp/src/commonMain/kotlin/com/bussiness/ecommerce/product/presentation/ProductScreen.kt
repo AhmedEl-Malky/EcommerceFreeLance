@@ -194,7 +194,7 @@ private fun ProductScreenContent(
             }
             item {
                 Text(
-                    modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 12.dp),
+                    modifier = Modifier.fillMaxWidth().padding(start = 16.dp, end = 16.dp, bottom = 12.dp),
                     text = "إسم المنتــج",
                     fontSize = 28.sp,
                     fontFamily = FontFamily(
