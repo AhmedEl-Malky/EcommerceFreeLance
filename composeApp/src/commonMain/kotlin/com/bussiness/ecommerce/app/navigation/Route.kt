@@ -11,4 +11,7 @@ sealed interface Route {
 
     @Serializable
     data object Product : Route
+
+    @Serializable
+    data object Category : Route
 }

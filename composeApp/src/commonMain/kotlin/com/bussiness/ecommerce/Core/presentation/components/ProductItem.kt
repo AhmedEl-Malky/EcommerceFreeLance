@@ -30,7 +30,8 @@ import org.jetbrains.compose.resources.painterResource
 
 @Composable
 fun ProductItem(
-    navigate:() -> Unit
+    navigate:() -> Unit,
+    modifier: Modifier = Modifier
 ) {
     Card(
         onClick = {
@@ -43,11 +44,11 @@ fun ProductItem(
         shape = RoundedCornerShape(14.dp)
     ){
         Column(
-            modifier = Modifier.width(200.dp),
+            modifier = modifier.width(200.dp),
             verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             Image(
-                modifier = Modifier
+                modifier = modifier
                     .size(200.dp)
                     .clip(RoundedCornerShape(14.dp))
                     .background(MaterialTheme.colorScheme.secondary),
@@ -69,7 +70,7 @@ fun ProductItem(
                 )
 
                 Row(
-                    modifier = Modifier.fillMaxWidth().padding(end = 6.dp),
+                    modifier = modifier.fillMaxWidth().padding(end = 6.dp),
                     verticalAlignment = Alignment.Bottom,
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {

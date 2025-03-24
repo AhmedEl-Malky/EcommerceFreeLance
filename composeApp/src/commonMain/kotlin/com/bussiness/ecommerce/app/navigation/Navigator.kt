@@ -10,6 +10,7 @@ class Navigator(
             Route.AppGraph -> {}
             Route.Home -> navController.navigate(route)
             Route.Product -> navController.navigate(route)
+            Route.Category -> navController.navigate(route)
         }
     }
 }

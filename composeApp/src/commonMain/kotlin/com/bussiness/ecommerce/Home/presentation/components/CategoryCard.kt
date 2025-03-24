@@ -24,9 +24,13 @@ import e_commercefreelance.composeapp.generated.resources.category
 import org.jetbrains.compose.resources.painterResource
 
 @Composable
-fun CategoryCard(){
+fun CategoryCard(
+    navigate: () -> Unit
+){
     Card(
-        onClick = {},
+        onClick = {
+            navigate()
+        },
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp)

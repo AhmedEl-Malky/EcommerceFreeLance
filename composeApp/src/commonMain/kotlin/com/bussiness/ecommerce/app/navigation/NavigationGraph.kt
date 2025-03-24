@@ -10,6 +10,8 @@ import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
 import com.bussiness.ecommerce.Home.presentation.HomeScreen
 import com.bussiness.ecommerce.Home.presentation.HomeViewModel
+import com.bussiness.ecommerce.category.presentation.CategoryScreen
+import com.bussiness.ecommerce.category.presentation.CategoryViewModel
 import com.bussiness.ecommerce.product.presentation.ProductScreen
 import com.bussiness.ecommerce.product.presentation.ProductViewModel
 
@@ -38,6 +40,16 @@ fun NavigationGraph(){
                 val viewModel = remember { ProductViewModel() }
                 val state by viewModel.state.collectAsStateWithLifecycle()
                 ProductScreen(
+                    state = state,
+                    onAction = viewModel::onAction,
+                    navigator = navigator
+                )
+            }
+
+            composable<Route.Category> {
+                val viewModel = remember { CategoryViewModel() }
+                val state by viewModel.state.collectAsStateWithLifecycle()
+                CategoryScreen(
                     state = state,
                     onAction = viewModel::onAction,
                     navigator = navigator

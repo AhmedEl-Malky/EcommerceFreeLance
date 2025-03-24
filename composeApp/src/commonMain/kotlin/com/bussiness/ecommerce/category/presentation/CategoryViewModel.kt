@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.update
 
 class CategoryViewModel : ViewModel() {
 
@@ -27,7 +28,15 @@ class CategoryViewModel : ViewModel() {
 
     fun onAction(action: CategoryAction) {
         when (action) {
-            else -> TODO("Handle actions")
+            CategoryAction.OnIsLoadingToggle -> isLoadingToggle()
+        }
+    }
+
+    private fun isLoadingToggle(){
+        _state.update {
+            it.copy(
+                isLoading = !it.isLoading
+            )
         }
     }
 

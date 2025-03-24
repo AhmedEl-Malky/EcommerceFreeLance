@@ -26,13 +26,15 @@ import com.bussiness.ecommerce.Core.presentation.components.shimmer
 import com.bussiness.ecommerce.Core.presentation.theme.FontFamily
 
 @Composable
-fun ShimmerProductItem() {
+fun ShimmerProductItem(
+    modifier: Modifier = Modifier
+) {
     Column(
-        modifier = Modifier.width(200.dp),
+        modifier = modifier.width(200.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp)
     ) {
         Box(
-            modifier = Modifier
+            modifier = modifier
                 .size(200.dp)
                 .clip(RoundedCornerShape(14.dp))
                 .background(MaterialTheme.colorScheme.secondary)

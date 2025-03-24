@@ -30,6 +30,7 @@ import com.bussiness.ecommerce.Home.presentation.components.CategoryCard
 import com.bussiness.ecommerce.Home.presentation.components.HeroSection
 import com.bussiness.ecommerce.Home.presentation.components.ProductsDiscoverSection
 import com.bussiness.ecommerce.app.navigation.Navigator
+import com.bussiness.ecommerce.app.navigation.Route
 import e_commercefreelance.composeapp.generated.resources.New_Arrivals
 import e_commercefreelance.composeapp.generated.resources.Res
 import e_commercefreelance.composeapp.generated.resources.Top_selling
@@ -105,7 +106,11 @@ private fun HomeScreenContent(
                 CategoriesSection()
             }
             items(categories) {
-                CategoryCard()
+                CategoryCard(
+                    navigate = {
+                        navigator.navigate(Route.Category)
+                    }
+                )
             }
             item {
                 Spacer(
