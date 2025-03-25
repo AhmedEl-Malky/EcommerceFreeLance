@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyListState
+import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -36,7 +37,7 @@ import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun HeroSection(
-    state: LazyListState
+    state: LazyGridState
 ) {
     val coroutineScope = rememberCoroutineScope()
     Column(

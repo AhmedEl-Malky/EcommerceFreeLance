@@ -32,9 +32,10 @@ fun CategoriesSection() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 16.dp, end = 16.dp, top = 50.dp)
-            .clip(RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp))
+            .padding(start = 16.dp, end = 16.dp, top = 26.dp)
+            .clip(RoundedCornerShape(20.dp))
             .background(MaterialTheme.colorScheme.secondary)
+            .padding(bottom = 27.dp)
             .padding(top = 40.dp),
     ){
         Text(
@@ -52,5 +53,17 @@ fun CategoriesSection() {
             textAlign = TextAlign.Center,
             lineHeight = 36.sp,
         )
+        repeat(categories.size) {
+            CategoryCard(
+                navigate = {}
+            )
+        }
     }
 }
+
+val categories = listOf(
+    "1",
+    "1",
+    "1",
+    "1"
+)
