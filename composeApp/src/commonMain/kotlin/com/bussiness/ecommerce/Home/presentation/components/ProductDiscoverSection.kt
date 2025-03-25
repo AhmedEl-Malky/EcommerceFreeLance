@@ -39,7 +39,7 @@ fun ProductsDiscoverSection(
         modifier = Modifier
             .fillMaxWidth()
             .background(MaterialTheme.colorScheme.background)
-            .padding(top = 40.dp),
+            .padding(top = 8.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -59,7 +59,7 @@ fun ProductsDiscoverSection(
             horizontalArrangement = Arrangement.spacedBy(16.dp),
             contentPadding = PaddingValues(horizontal = 16.dp)
         ) {
-            items(list) {
+            items(10) {
                 ProductItem(
                     navigate = { navigator.navigate(Route.Product)}
                 )
@@ -91,16 +91,3 @@ fun ProductsDiscoverSection(
         )
     }
 }
-
-val list = listOf(
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10"
-)

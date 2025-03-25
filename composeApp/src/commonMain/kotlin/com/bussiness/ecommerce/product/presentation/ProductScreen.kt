@@ -17,12 +17,14 @@ import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ElevatedFilterChip
+import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SelectableChipElevation
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -127,7 +129,6 @@ private fun ProductScreenContent(
                 .fillMaxSize()
                 .background(MaterialTheme.colorScheme.background)
                 .padding(paddingValues),
-            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             item {
                 HorizontalDivider(
@@ -240,7 +241,7 @@ private fun ProductScreenContent(
                             .background(MaterialTheme.colorScheme.error)
                             .padding(vertical = 3.dp, horizontal = 8.dp),
                         text = "20%-",
-                        fontSize = 24.sp,
+                        fontSize = 16.sp,
                         fontFamily = FontFamily(
                             weight = FontWeight.Medium
                         ),
@@ -299,7 +300,7 @@ private fun ProductScreenContent(
                     verticalArrangement = Arrangement.spacedBy(4.dp),
                     overflow = FlowRowOverflow.Visible
                 ) {
-                    ElevatedFilterChip(
+                    FilterChip(
                         selected = false,
                         onClick = {},
                         label = {
@@ -323,7 +324,7 @@ private fun ProductScreenContent(
                             selectedLabelColor = MaterialTheme.colorScheme.onPrimary
                         )
                     )
-                    ElevatedFilterChip(
+                    FilterChip(
                         selected = true,
                         onClick = {},
                         label = {
@@ -347,7 +348,7 @@ private fun ProductScreenContent(
                             selectedLabelColor = MaterialTheme.colorScheme.onPrimary
                         )
                     )
-                    ElevatedFilterChip(
+                    FilterChip(
                         selected = false,
                         onClick = {},
                         label = {
@@ -371,7 +372,7 @@ private fun ProductScreenContent(
                             selectedLabelColor = MaterialTheme.colorScheme.onPrimary
                         )
                     )
-                    ElevatedFilterChip(
+                    FilterChip(
                         selected = false,
                         onClick = {},
                         label = {
@@ -395,7 +396,7 @@ private fun ProductScreenContent(
                             selectedLabelColor = MaterialTheme.colorScheme.onPrimary
                         )
                     )
-                    ElevatedFilterChip(
+                    FilterChip(
                         selected = false,
                         onClick = {},
                         label = {
@@ -470,7 +471,7 @@ private fun ProductScreenContent(
                             )
                         }
                         Text(
-                            text = "1",
+                            text = "10",
                             fontSize = 16.sp,
                             fontFamily = FontFamily(
                                 weight = FontWeight.Medium

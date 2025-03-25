@@ -7,6 +7,15 @@ sealed interface Route {
     data object AppGraph : Route
 
     @Serializable
+    data object AuthenticationGraph : Route
+
+    @Serializable
+    data object Login:Route
+
+    @Serializable
+    data object Signup:Route
+
+    @Serializable
     data object Home : Route
 
     @Serializable
@@ -14,4 +23,5 @@ sealed interface Route {
 
     @Serializable
     data object Category : Route
+
 }

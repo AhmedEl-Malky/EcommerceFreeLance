@@ -30,6 +30,7 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.bussiness.ecommerce.Core.presentation.components.FooterSection
 import com.bussiness.ecommerce.Core.presentation.components.ProductItem
 import com.bussiness.ecommerce.Core.presentation.theme.Font
 import com.bussiness.ecommerce.Core.presentation.theme.FontFamily
@@ -244,6 +245,18 @@ private fun CategoryScreenContent(
                     }
                 }
             }
+            item(
+                span = {
+                    GridItemSpan(currentLineSpan = 2)
+                }
+            ) {
+                HorizontalDivider(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(MaterialTheme.colorScheme.outline)
+                )
+            }
+//            item {  }
         }
     }
 }
