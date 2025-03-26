@@ -14,6 +14,8 @@ import com.bussiness.ecommerce.authentication.presentation.login.presentation.Lo
 import com.bussiness.ecommerce.authentication.presentation.login.presentation.LoginViewModel
 import com.bussiness.ecommerce.authentication.presentation.signup.presentation.SignupScreen
 import com.bussiness.ecommerce.authentication.presentation.signup.presentation.SignupViewModel
+import com.bussiness.ecommerce.cart.presentation.CartScreen
+import com.bussiness.ecommerce.cart.presentation.CartViewModel
 import com.bussiness.ecommerce.category.presentation.CategoryScreen
 import com.bussiness.ecommerce.category.presentation.CategoryViewModel
 import com.bussiness.ecommerce.product.presentation.ProductScreen
@@ -79,6 +81,15 @@ fun NavigationGraph(){
                 val viewModel = koinViewModel<CategoryViewModel>()
                 val state by viewModel.state.collectAsStateWithLifecycle()
                 CategoryScreen(
+                    state = state,
+                    onAction = viewModel::onAction,
+                    navigator = navigator
+                )
+            }
+            composable<Route.Cart> {
+                val viewModel = koinViewModel<CartViewModel>()
+                val state by viewModel.state.collectAsStateWithLifecycle()
+                CartScreen(
                     state = state,
                     onAction = viewModel::onAction,
                     navigator = navigator

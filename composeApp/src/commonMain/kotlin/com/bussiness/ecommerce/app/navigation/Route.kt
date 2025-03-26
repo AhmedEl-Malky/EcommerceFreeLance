@@ -24,4 +24,7 @@ sealed interface Route {
     @Serializable
     data object Category : Route
 
+    @Serializable
+    data object Cart : Route
+
 }

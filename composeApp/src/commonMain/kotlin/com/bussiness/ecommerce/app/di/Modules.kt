@@ -4,6 +4,7 @@ import com.bussiness.ecommerce.Home.presentation.HomeViewModel
 import com.bussiness.ecommerce.authentication.domain.UserDataValidator
 import com.bussiness.ecommerce.authentication.presentation.login.presentation.LoginViewModel
 import com.bussiness.ecommerce.authentication.presentation.signup.presentation.SignupViewModel
+import com.bussiness.ecommerce.cart.presentation.CartViewModel
 import com.bussiness.ecommerce.category.presentation.CategoryViewModel
 import com.bussiness.ecommerce.product.presentation.ProductViewModel
 import org.koin.core.module.Module
@@ -19,6 +20,7 @@ val sharedModule:Module = module {
     singleOf(::HomeViewModel)
     singleOf(::CategoryViewModel)
     singleOf(::ProductViewModel)
+    singleOf(::CartViewModel)
 
     singleOf(::UserDataValidator)
 }

@@ -142,7 +142,7 @@ private fun HomeScreenContent(
                 )
             }
             item(span = { GridItemSpan(2) }) {
-                CategoriesSection()
+                CategoriesSection(navigate = { navigator.navigate(Route.Category) })
             }
             item(span = { GridItemSpan(2) }) {
                 FooterSection()
