@@ -93,7 +93,9 @@ private fun CategoryScreenContent(
                     horizontalArrangement = Arrangement.spacedBy(4.dp)
                 ) {
                     IconButton(
-                        onClick = {}
+                        onClick = {
+                            navigator.navigate(Route.Cart)
+                        }
                     ) {
                         Icon(
                             painter = painterResource(Res.drawable.cart_icon),

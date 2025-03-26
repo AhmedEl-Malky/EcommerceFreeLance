@@ -28,7 +28,9 @@ import e_commercefreelance.composeapp.generated.resources.Res
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun CategoriesSection() {
+fun CategoriesSection(
+    navigate:() -> Unit
+) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -55,7 +57,9 @@ fun CategoriesSection() {
         )
         repeat(categories.size) {
             CategoryCard(
-                navigate = {}
+                navigate = {
+                    navigate()
+                }
             )
         }
     }

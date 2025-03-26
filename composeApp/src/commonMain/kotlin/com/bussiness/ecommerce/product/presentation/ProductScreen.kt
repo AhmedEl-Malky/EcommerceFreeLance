@@ -42,6 +42,7 @@ import com.bussiness.ecommerce.Core.presentation.theme.Font
 import com.bussiness.ecommerce.Core.presentation.theme.FontFamily
 import com.bussiness.ecommerce.Home.presentation.components.ProductsDiscoverSection
 import com.bussiness.ecommerce.app.navigation.Navigator
+import com.bussiness.ecommerce.app.navigation.Route
 import com.bussiness.ecommerce.product.presentation.components.ProductImgSection
 import e_commercefreelance.composeapp.generated.resources.Add_to_cart
 import e_commercefreelance.composeapp.generated.resources.Choose_variant
@@ -99,7 +100,9 @@ private fun ProductScreenContent(
                     horizontalArrangement = Arrangement.spacedBy(4.dp)
                 ) {
                     IconButton(
-                        onClick = {}
+                        onClick = {
+                            navigator.navigate(Route.Cart)
+                        }
                     ) {
                         Icon(
                             painter = painterResource(Res.drawable.cart_icon),

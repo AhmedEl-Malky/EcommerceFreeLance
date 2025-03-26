@@ -14,6 +14,7 @@ class Navigator(
             Route.AuthenticationGraph -> {}
             Route.Login -> navController.navigate(route)
             Route.Signup -> navController.navigate(route)
+            Route.Cart -> navController.navigate(route)
         }
     }
 }

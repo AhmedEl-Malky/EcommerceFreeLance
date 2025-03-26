@@ -34,4 +34,14 @@
     <string name="Confirmed_password_mismatch">تأكيد كلمة المرور غير متطابق مع كلمة المرور</string>
     <string name="Name_is_empty">الاسم لا يمكن أن يكون فارغا</string>
     <string name="Name_is_short">الاسم لا يمكن أن يكون أقل من 3 أحرف</string>
+    <string name="Cart">السلـة</string>
+    <string name="Your_cart">السلـة خاصتك</string>
+    <string name="Order_summary">مراجعة الطلـب</string>
+    <string name="Subtotal">إجمالي قبل الخصم</string>
+    <string name="Discount">خصـم</string>
+    <string name="Delivery_fee">رسوم التوصيـل</string>
+    <string name="Total">الإجمالــي</string>
+    <string name="Apply">تطبيق</string>
+    <string name="Add_promo_code">أضف كود خصـم</string>
+    <string name="Go_to_checkout">إذهب للدفع</string>
 </resources>
